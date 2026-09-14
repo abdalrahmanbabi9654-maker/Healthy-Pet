@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Pet - أكل قطاط طبيعي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        warm: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        cream: '#FFFDF7',
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-nunito bg-cream text-gray-800 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center gap-2">
+                    <span class="text-3xl">🐾</span>
+                    <span class="text-xl md:text-2xl font-extrabold text-brand-700">Healthy Pet</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link font-semibold text-gray-700 hover:text-brand-600 transition-colors">الرئيسية</a>
+                    <a href="#products" class="nav-link font-semibold text-gray-700 hover:text-brand-600 transition-colors">المنتجات</a>
+                    <a href="#features" class="nav-link font-semibold text-gray-700 hover:text-brand-600 transition-colors">لماذا نحن</a>
+                    <a href="#reviews" class="nav-link font-semibold text-gray-700 hover:text-brand-600 transition-colors">آراء العملاء</a>
+                    <a href="#order" class="bg-brand-600 text-white px-5 py-2 rounded-full font-bold hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-200">اطلب الآن</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 p-2">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-xl">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block py-2 font-semibold text-gray-700 hover:text-brand-600">الرئيسية</a>
+                <a href="#products" class="block py-2 font-semibold text-gray-700 hover:text-brand-600">المنتجات</a>
+                <a href="#features" class="block py-2 font-semibold text-gray-700 hover:text-brand-600">لماذا نحن</a>
+                <a href="#reviews" class="block py-2 font-semibold text-gray-700 hover:text-brand-600">آراء العملاء</a>
+                <a href="#order" class="block bg-brand-600 text-white text-center py-3 rounded-full font-bold hover:bg-brand-700 transition-all">اطلب الآن</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-brand-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-warm-200/20 rounded-full blur-3xl"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-right space-y-6 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-2 rounded-full text-sm font-bold">
+                        <span>🌿</span>
+                        <span>100% طبيعي وطازج</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-gray-900">
+                        الأكل الصحي لحيوانك
+                        <span class="text-brand-600">المقرّب</span>
+                        <span class="inline-block animate-bounce">🐾</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 lg:max-w-none leading-relaxed">
+                        وجبات طازجة منزليّة وطبيعية 100% مصنوعة من أجود المكونات لصحته أولاً.
+                        دجاج، بطاطا، كوسا، وجزر — بدون أي مواد حافظة صناعية.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#order" class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-700 transition-all hover:shadow-xl hover:shadow-brand-200 hover:-translate-y-0.5">
+                            <span>اطلب الآن</span>
+                            <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#products" class="inline-flex items-center justify-center gap-2 border-2 border-brand-600 text-brand-700 px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-50 transition-all">
+                            <span>اكتشف المنتجات</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-8 justify-center lg:justify-start pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-brand-600">+500</div>
+                            <div class="text-sm text-gray-500">عميل سعيد</div>
+                        </div>
+                        <div class="w-px h-10 bg-gray-200"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-brand-600">100%</div>
+                            <div class="text-sm text-gray-500">مكونات طبيعية</div>
+                        </div>
+                        <div class="w-px h-10 bg-gray-200"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-brand-600">⭐ 4.9</div>
+                            <div class="text-sm text-gray-500">تقييم العملاء</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex justify-center lg:justify-end animate-fade-in">
+                    <div class="hero-visual relative">
+                        <div class="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-brand-100 to-brand-200 rounded-full flex items-center justify-center shadow-2xl shadow-brand-200/50 float-animation">
+                            <div class="text-center space-y-2">
+                                <div class="text-8xl sm:text-9xl">🐱</div>
+                                <div class="text-lg font-bold text-brand-700">وجبة صحية</div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-lg animate-bounce-subtle">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl">🍗</span>
+                                <div>
+                                    <div class="text-xs text-gray-500">المكون الرئيسي</div>
+                                    <div class="font-bold text-sm text-brand-700">دجاج طازج</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-3 shadow-lg animate-bounce-subtle" style="animation-delay: 0.5s">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl">🥕</span>
+                                <div>
+                                    <div class="text-xs text-gray-500">خضروات طازجة</div>
+                                    <div class="font-bold text-sm text-warm-600">جزر + بطاطا</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 md:py-28 bg-white relative">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-warm-100 text-warm-700 px-4 py-2 rounded-full text-sm font-bold">
+                    <span>🍽️</span>
+                    <span>منتجنا الرئيسي</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900">
+                    وجبة قطوط الطازجة <span class="text-brand-600">المميزة</span>
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                    وجبة كاملة ومتوازنة مصنوعة يدوياً من أجود المكونات الطبيعية المتوفرة في سوريا
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-white to-brand-50 rounded-3xl shadow-xl border border-brand-100 overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-0">
+                        <div class="relative bg-gradient-to-br from-brand-50 to-brand-100 p-8 md:p-12 flex items-center justify-center min-h-[400px]">
+                            <div class="relative">
+                                <div class="w-56 h-56 sm:w-64 sm:h-64 bg-gradient-to-br from-brand-200 to-brand-300 rounded-3xl flex items-center justify-center shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                                    <div class="text-center space-y-3">
+                                        <div class="text-7xl">🥫</div>
+                                        <div class="bg-brand-600 text-white px-4 py-1 rounded-full text-sm font-bold">علبة عائلية</div>
+                                    </div>
+                                </div>
+                                <div class="absolute -top-3 -right-3 bg-warm-500 text-white w-20 h-20 rounded-full flex items-center justify-center font-black text-sm shadow-lg transform -rotate-12">
+                                    <div class="text-center leading-tight">
+                                        <div class="text-xs">السعر</div>
+                                        <div class="text-lg">300</div>
+                                        <div class="text-[10px]">ل.س</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-8 md:p-12 space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-black text-gray-900 mb-2">Healthy Pet Meal</h3>
+                                <p class="text-gray-500">وجبة طبيعية مخصّصة للقطط</p>
+                            </div>
+
+                            <div class="flex items-baseline gap-3">
+                                <span class="text-4xl font-black text-brand-600">300</span>
+                                <span class="text-lg text-gray-500 font-semibold">ليرة سورية جديدة / علبة</span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h4 class="font-bold text-gray-900 flex items-center gap-2">
+                                    <span>🥗</span>
+                                    <span>المكونات الطازجة:</span>
+                                </h4>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-100 hover:border-brand-200 transition-colors">
+                                        <span class="text-2xl">🍗</span>
+                                        <div>
+                                            <div class="font-bold text-gray-900 text-sm">الدجاج</div>
+                                            <div class="text-xs text-gray-400">بروتين عالي الجودة</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-100 hover:border-brand-200 transition-colors">
+                                        <span class="text-2xl">🥔</span>
+                                        <div>
+                                            <div class="font-bold text-gray-900 text-sm">البطاطا</div>
+                                            <div class="text-xs text-gray-400">طاقة مستدامة</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-100 hover:border-brand-200 transition-colors">
+                                        <span class="text-2xl">🥒</span>
+                                        <div>
+                                            <div class="font-bold text-gray-900 text-sm">الكوسا</div>
+                                            <div class="text-xs text-gray-400">فيتامينات غنية</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-100 hover:border-brand-200 transition-colors">
+                                        <span class="text-2xl">🥕</span>
+                                        <div>
+                                            <div class="font-bold text-gray-900 text-sm">الجزر</div>
+                                            <div class="text-xs text-gray-400">دعم المناعة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#order" class="block w-full bg-brand-600 text-white text-center py-4 rounded-2xl font-bold text-lg hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-200 hover:-translate-y-0.5">
+                                اطلب الآن 🛒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 md:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-cream to-white"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-2 rounded-full text-sm font-bold">
+                    <span>✨</span>
+                    <span>مميزات المنتج</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900">
+                    لماذا تختار <span class="text-brand-600">Healthy Pet</span>؟
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                    نحن نهتم بصحة قطك كما نهتم بصحة أطفالنا
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        🌿
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">مكونات طبيعية 100%</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        جميع مكوناتنا طبيعية وطازجة. لا نستخدم أي مواد كيميائية أو صناعية في إنتاجنا.
+                    </p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        🚫
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">بدون مواد حافظة صناعية</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        وجباتنا خالية تماماً من المواد الحافظة الصناعية والألوان الاصطناعية. طبيعية 100%.
+                    </p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        ⚖️
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">تغذية متوازنة</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        وجبات مصممة بعناية لتوفير جميع العناصر الغذائية التي يحتاجها قطك لحياة صحية وسعيدة.
+                    </p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        🏠
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">صنع منزلي</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        كل وجبة تُحضّر يدوياً بحب وعناية في بيئة نظيفة ومحكمة لضمان أعلى معايير الجودة.
+                    </p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        ❤️
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">محبوبة من القطط</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        اختبرنا وجباتنا مع مئات القطط وجميعها أحبّت الطعم. مضمون أن قطك سيحبها!
+                    </p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        🚚
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">توصيل سريع</h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        نوصّل لباب بيتك في جميع أنحاء سوريا. اطلب الآن واستلم في أقرب وقت ممكن.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-warm-100 text-warm-700 px-4 py-2 rounded-full text-sm font-bold">
+                    <span>💬</span>
+                    <span>آراء عملائنا</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900">
+                    ماذا يقول عملاؤنا؟
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                    أكثر من 500 عميل سعيد في سوريا
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gradient-to-br from-white to-brand-50 rounded-3xl p-8 shadow-sm border border-brand-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "قطتي كانت كسلانة وما كانت تاكل كويس من فترة. من يوم ما بدأت أعطيها وجبة Healthy Pet، صارت نشطة وبتاكل كل الوجبة! شكراً لكم."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-brand-200 rounded-full flex items-center justify-center text-xl font-bold text-brand-700">س</div>
+                        <div>
+                            <div class="font-bold text-gray-900">سارة أحمد</div>
+                            <div class="text-sm text-gray-400">دمشق</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-gradient-to-br from-white to-warm-50 rounded-3xl p-8 shadow-sm border border-warm-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "عندي 3 قطط وكلهم يحبون هالوجبة. أحسن شيء إنه طبيعي وبدون مواد حافظة. صرت ما بخاف على صحتهم. أنصح فيهم بقوة!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-warm-200 rounded-full flex items-center justify-center text-xl font-bold text-warm-700">م</div>
+                        <div>
+                            <div class="font-bold text-gray-900">محمد خليل</div>
+                            <div class="text-sm text-gray-400">حلب</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-gradient-to-br from-white to-brand-50 rounded-3xl p-8 shadow-sm border border-brand-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                        <span class="text-yellow-400 text-lg">⭐</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "قطتي 'لولا' كانت ترفض كل الأكل الصناعي. يوم جربت هالوجبة، ما صدقت! صارت تركض كل ما أفتح الثلاجة. التوصيل كان سريع والخدمة ممتازة."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-brand-200 rounded-full flex items-center justify-center text-xl font-bold text-brand-700">ل</div>
+                        <div>
+                            <div class="font-bold text-gray-900">لينا يوسف</div>
+                            <div class="text-sm text-gray-400">حمص</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-20 md:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-brand-50/50 to-cream"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-2 rounded-full text-sm font-bold">
+                    <span>📦</span>
+                    <span>اطلب الآن</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900">
+                    اطلب وجبة قطك <span class="text-brand-600">الآن</span>
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                    ملّأ النموذج أدناه وسنتواصل معك قريباً لتأكيد الطلب والتوصيل
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8">
+                <!-- Order Form -->
+                <div class="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span>📝</span>
+                        <span>بيانات الطلب</span>
+                    </h3>
+                    <form id="orderForm" class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">الاسم الكامل *</label>
+                            <input type="text" id="custName" required placeholder="أدخل اسمك الكامل"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all text-gray-800 placeholder-gray-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">رقم الهاتف *</label>
+                            <input type="tel" id="custPhone" required placeholder="09XXXXXXXX"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all text-gray-800 placeholder-gray-300" dir="ltr">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">عنوان التوصيل *</label>
+                            <input type="text" id="custAddress" required placeholder="المدينة - الحي - الشارع"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all text-gray-800 placeholder-gray-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">الكمية *</label>
+                            <div class="flex items-center gap-4">
+                                <button type="button" id="qtyMinus" class="w-12 h-12 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xl font-bold text-gray-600 transition-colors">-</button>
+                                <input type="number" id="qtyInput" value="1" min="1" max="100"
+                                    class="w-20 text-center px-3 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all text-lg font-bold text-gray-800">
+                                <button type="button" id="qtyPlus" class="w-12 h-12 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xl font-bold text-gray-600 transition-colors">+</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50 rounded-2xl p-5 border border-brand-100">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-600">السعر للعلبة الواحدة</span>
+                                <span class="font-bold text-gray-800">300 ل.س</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-600">الكمية</span>
+                                <span id="qtyDisplay" class="font-bold text-gray-800">1</span>
+                            </div>
+                            <div class="border-t border-brand-200 my-3"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-900">المجموع الكلي</span>
+                                <span id="totalPrice" class="text-2xl font-black text-brand-600">300 ل.س</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-200 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span>تأكيد الطلب</span>
+                            <span>✓</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 text-white shadow-xl">
+                        <div class="text-5xl mb-4">💬</div>
+                        <h3 class="text-xl font-bold mb-3">اطلب عبر واتساب</h3>
+                        <p class="text-green-100 mb-6 leading-relaxed">
+                            تواصل معنا مباشرة عبر واتساب للطلب والاستفسار. نرد بسرعة!
+                        </p>
+                        <a id="whatsappBtn" href="#" target="_blank"
+                            class="block w-full bg-white text-green-600 text-center py-4 rounded-2xl font-bold text-lg hover:bg-green-50 transition-all hover:shadow-lg">
+                            اطلب عبر واتساب 💬
+                        </a>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 space-y-5">
+                        <h3 class="font-bold text-gray-900 flex items-center gap-2">
+                            <span>ℹ️</span>
+                            <span>معلومات مهمة</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center text-sm shrink-0 mt-0.5">🚚</div>
+                                <div>
+                                    <div class="font-bold text-gray-900 text-sm">توصيل سريع</div>
+                                    <div class="text-sm text-gray-500">توصيل مجاني داخل المدينة</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-warm-100 rounded-lg flex items-center justify-center text-sm shrink-0 mt-0.5">💰</div>
+                                <div>
+                                    <div class="font-bold text-gray-900 text-sm">الدفع عند الاستلام</div>
+                                    <div class="text-sm text-gray-500">ادفع عند استلام الطلب</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-sm shrink-0 mt-0.5">🔄</div>
+                                <div>
+                                    <div class="font-bold text-gray-900 text-sm">ضمان الرضا</div>
+                                    <div class="text-sm text-gray-500">إذا ما عجب قطك، نسترجع فلوسك</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span>📞</span>
+                            <span>تواصل معنا</span>
+                        </h3>
+                        <div class="space-y-3">
+                            <a href="tel:+963952737292" class="flex items-center gap-3 text-gray-600 hover:text-brand-600 transition-colors">
+                                <span>📱</span>
+                                <span dir="ltr">+963 952 737 292</span>
+                            </a>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <span>📍</span>
+                                <span>سوريا</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">🐾</span>
+                        <span class="text-xl font-extrabold">Healthy Pet</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        نقدم أفضل الوجبات الطبيعية للقطط في سوريا. صحة قطك أولويتنا.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">روابط سريعة</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-gray-400 hover:text-brand-400 text-sm transition-colors">الرئيسية</a>
+                        <a href="#products" class="block text-gray-400 hover:text-brand-400 text-sm transition-colors">المنتجات</a>
+                        <a href="#features" class="block text-gray-400 hover:text-brand-400 text-sm transition-colors">لماذا نحن</a>
+                        <a href="#reviews" class="block text-gray-400 hover:text-brand-400 text-sm transition-colors">آراء العملاء</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">الخدمة</h4>
+                    <div class="space-y-2">
+                        <a href="#order" class="block text-gray-400 hover:text-brand-400 text-sm transition-colors">اطلب الآن</a>
+                        <span class="block text-gray-400 text-sm">توصيل مجاني</span>
+                        <span class="block text-gray-400 text-sm">الدفع عند الاستلام</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">تواصل معنا</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-brand-600 transition-colors">💬</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-brand-600 transition-colors">📘</a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-brand-600 transition-colors">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Healthy Pet. جميع الحقوق محفوظة 🐾</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center space-y-4 shadow-2xl transform transition-all">
+            <div class="text-6xl">🎉</div>
+            <h3 class="text-2xl font-black text-gray-900">تم استلام طلبك!</h3>
+            <p class="text-gray-500">شكراً لك! سنتواصل معك قريباً لتأكيد الطلب والتوصيل.</p>
+            <div id="modalDetails" class="bg-brand-50 rounded-2xl p-4 text-right text-sm space-y-1"></div>
+            <button id="closeModal" class="w-full bg-brand-600 text-white py-3 rounded-xl font-bold hover:bg-brand-700 transition-all">
+                حسناً ✓
+            </button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
